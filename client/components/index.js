@@ -5,4 +5,7 @@
  */
 export {default as Navbar} from './navbar'
 export {default as UserHome} from './user-home'
+export {default as Categories} from './categories'
+export {default as AddForm} from './add-form'
+export {default as Dashboard} from './dash-board'
 export {Login, Signup} from './auth-form'
