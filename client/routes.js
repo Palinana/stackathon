@@ -4,7 +4,9 @@ import {withRouter, Route, Switch} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import {Login, Signup, UserHome} from './components'
 import {me} from './store'
-
+import Categories from './components/categories'
+import AddForm from './components/add-form'
+import Dashboard from './components/dash-board'
 /**
  * COMPONENT
  */
@@ -25,7 +27,10 @@ class Routes extends Component {
           isLoggedIn &&
             <Switch>
               {/* Routes placed here are only available after logging in */}
-              <Route path="/home" component={UserHome} />
+              {/* <Route path="/home" component={UserHome} /> */}
+              <Route exact path="/" component={Categories} /> 
+              <Route exact path="/add" component={AddForm} /> 
+              <Route exact path="/dashboard" component={Dashboard} /> 
             </Switch>
         }
         {/* Displays our Login component as a fallback */}
