@@ -5,10 +5,7 @@ const Category = require('./category')
 const Brand = db.define('brand', {
     name: {
         type: Sequelize.STRING,
-        allowNull: false,
-        validate: {
-            notEmpty: true
-        }
+        allowNull: false
     }
 })
 

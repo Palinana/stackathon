@@ -6,7 +6,7 @@ import {Login, Signup, UserHome} from './components'
 import {me} from './store'
 import Categories from './components/categories'
 import AddForm from './components/add-form'
-import Dashboard from './components/dash-board'
+import Closet from './components/closets'
 /**
  * COMPONENT
  */
@@ -30,7 +30,7 @@ class Routes extends Component {
               {/* <Route path="/home" component={UserHome} /> */}
               <Route exact path="/" component={Categories} /> 
               <Route exact path="/add" component={AddForm} /> 
-              <Route exact path="/dashboard" component={Dashboard} /> 
+              <Route exact path="/closet" component={Closet} /> 
             </Switch>
         }
         {/* Displays our Login component as a fallback */}
