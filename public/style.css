@@ -19,3 +19,38 @@ form div {
   margin: 1em;
   display: inline-block;
 }
+
+/* login page */
+.form-container{
+  width:100%;
+	margin:auto;
+	max-width:525px;
+	min-height:670px;
+  position:relative;
+  background:rgba(0,0,0,.1);
+}
+.login-form{
+  width:100%;
+	margin:auto;
+	max-width:525px;
+	min-height:670px;
+	position:relative;
+}
+.label{
+  text-transform: uppercase;
+  color: rgb(0, 0, 0);
+  font-size: 12px;
+  
+}
+.input{
+  border: none;
+  padding: 15px 20px;
+  border-radius: 25px;
+  background: rgba(255,255,255,.1);
+}
+.login-button{
+  border: none;
+  padding: 15px 20px;
+  border-radius: 25px;
+  background: #60759b;
+}

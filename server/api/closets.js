@@ -16,50 +16,28 @@ router.get('/', (req, res, next) => {
 
 
   //get a user's closet
-router.get('/:userId', (req, res, next) => {
-    Closet.findOne({
-      where: {
-        userId: req.params.userId
-      }, include: [{all: true}]
-    })
-    .then(res => {
-        console.log("Getting order", res.data)
-        return res.data
-      })
-    .then(closet => {
+// router.get('/:userId', (req, res, next) => {
+//     Closet.findOne({
+//       where: {
+//         userId: req.params.userId
+//       }, include: [{all: true}]
+//     })
+//     .then(res => {
+//         console.log("Getting order", res.data)
+//         return res.data
+//       })
+//     .then(closet => {
   
-      res.send(closet);
-      })
-    .catch(next);
-  });
-
-  router.get('/user/:userId', (req, res, next) => {
-    Cart.findOne({
-      where: {
-        userId: req.params.userId,
-        status: 'pending'
-      }
-    })
-    .then(cart => {
-      return cart.getOrders({include: [{model: Trip}]});
-    })
-    .then(orders => {
-      const send = orders.map(order => {
-          return {
-            subTotal: order.subTotal,
-            quantity: order.quantity,
-            id: order.id,
-            unitPrice: order.unitPrice,
-            tripId: order.tripId,
-            cartId: order.cartId,
-            trip: order.trip.name
-          }
-        });
-      res.send(send);
-      })
-    .catch(next);
-  });
-
+//       res.send(closet);
+//       })
+//     .catch(next);
+//   });
+router.get('/:id', (req, res, next) => {
+  Closet.findById(req.params.id, {include: [{all: true}]})
+  .then(closet => res.send(closet))
+  .catch(next)
+})
+  
   //post a new item to a user's closet
 router.post('/', (req, res, next) => {
     Closet.create(req.body)

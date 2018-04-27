@@ -7,6 +7,8 @@ import {me} from './store'
 import Categories from './components/categories'
 import AddForm from './components/add-form'
 import Closet from './components/closets'
+import SingleCloset from './components/single-closet';
+
 /**
  * COMPONENT
  */
@@ -22,15 +24,16 @@ class Routes extends Component {
       <Switch>
         {/* Routes placed here are available to all visitors */}
         <Route path="/login" component={Login} />
-        <Route path="/signup" component={Signup} />
+        {/* <Route path="/signup" component={Signup} /> */}
         {
           isLoggedIn &&
             <Switch>
               {/* Routes placed here are only available after logging in */}
               {/* <Route path="/home" component={UserHome} /> */}
-              <Route exact path="/" component={Categories} /> 
+              <Route exact path="/categories" component={Categories} /> 
               <Route exact path="/add" component={AddForm} /> 
-              <Route exact path="/closet" component={Closet} /> 
+              <Route exact path="/home" component={Closet} />
+              <Route exact path="/closets/:id" component={SingleCloset} />  
             </Switch>
         }
         {/* Displays our Login component as a fallback */}

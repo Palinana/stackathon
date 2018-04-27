@@ -7,7 +7,7 @@ const Closet = db.define('closet', {
     type: Sequelize.INTEGER,
   
   },
-  model: {
+  style: {
     type: Sequelize.TEXT
   }
 
