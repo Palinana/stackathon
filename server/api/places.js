@@ -11,6 +11,5 @@ router.get('/', (req, res, next) => {
 
 router.get('/:id', (req, res, next) => {
     Place.findById(req.params.id)
-    .then(place => res.send(place))
     .catch(next)
 })

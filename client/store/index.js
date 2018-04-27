@@ -7,14 +7,14 @@ import categoriesReducer from './categories'
 import brandsReducer from './brands'
 import placesReducer from './places'
 import linksReducer from './links'
-import { closetReducer, singleClosetReducer } from './closets'
+import { closetReducer, singleClosetReducer, addClosetReducer } from './closets'
 
 
 
 
 
 const reducer = combineReducers({user, categories: categoriesReducer, brands: brandsReducer, places: placesReducer, 
-  links: linksReducer, closets: closetReducer, selectedCloset: singleClosetReducer})
+  links: linksReducer, closets: closetReducer, selectedCloset: singleClosetReducer, addCloset: addClosetReducer})
 const middleware = composeWithDevTools(applyMiddleware(
   thunkMiddleware,
   createLogger({collapsed: true})

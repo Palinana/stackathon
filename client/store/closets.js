@@ -10,7 +10,7 @@ export function getAllFromCloset(closets) {
   return {type: GET_ALL_FROM_CLOSET, closets}
 }
 
-export function getSingleCloset(closet) {
+export function getSingleCloset(selectedCloset) {
   return {type: GET_SINGLE_CLOSET, selectedCloset}
 }
 
@@ -41,6 +41,11 @@ export const fetchSingleCloset = (id) => {
   return dispatch => {
     axios.get(`/api/closets/${id}`)
       .then(res => res.data)
+  //     .then(res => {
+  //       console.log('Coming back with the data!', res.data)
+  //     return res.data
+  //   }
+  // )
       .then(closet => {
         dispatch(getSingleCloset(closet))
       })
@@ -48,16 +53,15 @@ export const fetchSingleCloset = (id) => {
   }
 }
 
-export const createNewCloset = (closet, history) => {
+export const createNewCloset = (closet) => {
   return dispatch => {
     return axios.post('/api/closets', closet)
       .then(res => {
         console.log("Getting res.data", res.data)
         return res.data
       })
-      .then(closet => {
-        dispatch(addToCloset(closet))
-        history.push(`/closet/${closet.id}`)
+      .then(closets => {
+        dispatch(addToCloset(closets))
       })
   }
 }
@@ -69,8 +73,6 @@ export function closetReducer(closets = [], action) {
   switch (action.type) {
     case GET_ALL_FROM_CLOSET:
       return action.closets
-    case ADD_TO_CLOSET:
-      return [...closets, action.closets]
     default:
       return closets
   }
@@ -82,5 +84,13 @@ export function singleClosetReducer(state = {}, action) {
       return action.selectedCloset
     default:
       return state
+  }
+}
+export function addClosetReducer(closets = [], action) {
+  switch (action.type) {
+    case ADD_TO_CLOSET:
+      return [...closets, action.closets]
+    default:
+      return closets
   }
 }
