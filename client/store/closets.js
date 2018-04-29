@@ -4,6 +4,9 @@ import axios from 'axios';
 const GET_ALL_FROM_CLOSET = 'GET_ALL_FROM_CLOSET';
 const GET_SINGLE_CLOSET = 'GET_SINGLE_CLOSET';
 const ADD_TO_CLOSET = 'ADD_TO_CLOSET';
+const UPDATE_CLOSET = 'UPDATE_CLOSET';
+const DELETE_CLOSET = 'DELETE_CLOSET';
+
 
 //ACTION CREATORS
 export function getAllFromCloset(closets) {
@@ -17,6 +20,12 @@ export function getSingleCloset(selectedCloset) {
 export function addToCloset(item) {
   console.log("IN filterTrip action creator!")
   return {type: ADD_TO_CLOSET, item}
+}
+export function updateCloset(updatedCloset) {
+  return {type: UPDATE_CLOSET, updatedCloset}
+}
+export function deleteCloset(id) {
+  return {type: UPDATE_CLOSET, id}
 }
 
 
@@ -66,6 +75,35 @@ export const createNewCloset = (closet) => {
   }
 }
 
+
+export const updateClosetItem = (updatedCloset) => {
+  return dispatch => {
+    return axios.put(`/api/closets/${updatedCloset.id}`)
+      .then(res => {
+        console.log("Getting updated trip back", res.data)
+        return res.data
+      })
+      .then(updated => {
+        dispatch(updateCloset(updated))
+      })
+  }
+}
+
+export const removeFromCloset = (id) => {
+  return dispatch => {
+    axios.get(`/api/closets/${id}`)
+      // .then(res => res.data)
+      .then(() => {
+        dispatch(deleteCloset(id))
+      })
+      .catch(console.error)
+  }
+}
+
+
+// case DELETE_STUDENT: 
+//           let newStudents = state.filter(stud => stud.id != action.student.id)
+//           return action.newStudents;
 //REDUCER(S)
 
 
@@ -73,6 +111,10 @@ export function closetReducer(closets = [], action) {
   switch (action.type) {
     case GET_ALL_FROM_CLOSET:
       return action.closets
+    case UPDATE_CLOSET:
+      return closets.map(t => t.id === action.updatedCloset.id ? action.updatedCloset : t)
+    case DELETE_CLOSET:
+      return closets.filter(closet => closet.id !== action.id);  
     default:
       return closets
   }

@@ -6,6 +6,10 @@ const Brand = db.define('brand', {
     name: {
         type: Sequelize.STRING,
         allowNull: false
+    },
+    link: {
+        type: Sequelize.STRING,
+        allowNull: false
     }
 })
 

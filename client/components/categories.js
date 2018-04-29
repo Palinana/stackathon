@@ -18,17 +18,18 @@ class Categories extends Component {
     // }
     render() {
         console.log('categories Data: ', this.props.categories)
+        // console.log('user USER ID ' , this.props.user)
         const categories = this.props.categories
                                     // to={`/add`} params={{ test: category.id }}
         return (
             <div className="container">
-             <h2>Choose A Category</h2>
-             <div>
+             <h2 className="category-list">Choose A Category</h2>
+             <div className="categories">
                  {
-                     categories.map(category => {
+                     categories.map((category, i) => {
                         return (
                             <Link to={{pathname: '/add', state: { categ: category.id}}} className='category' key={category.id}>
-                            <ul >{category.name}</ul>
+                            <div className="cat-item" react_id={`id_${i}`}>{category.name}</div>
                             </Link>
                         )
                       })
@@ -42,7 +43,9 @@ class Categories extends Component {
 
 const mapState = state => {
     return {
-      categories: state.categories
+      categories: state.categories,
+      user: state.user.id,
+      email: state.user.email
     }
   }
   

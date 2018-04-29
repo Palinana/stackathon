@@ -35,12 +35,12 @@ async function seed () {
   ])
 
   const brands = await Promise.all([
-    Brand.create({name: 'Zara'}),
-    Brand.create({name: 'Mango'}),
-    Brand.create({name: 'Topshop'}),
-    Brand.create({name: 'GAP'}),
-    Brand.create({name: "Levi's"}),
-    Brand.create({name: 'Victoria Secret'}),
+    Brand.create({name: 'Zara', link: 'https://www.zara.com/us/'}),
+    Brand.create({name: 'Mango', link: 'https://shop.mango.com/us'}),
+    Brand.create({name: 'Topshop', link: 'http://us.topshop.com/'}),
+    Brand.create({name: 'GAP', link: 'https://www.gap.com'}),
+    Brand.create({name: "Levi's", link: 'https://www.levi.com/US/en_US/'}),
+    Brand.create({name: 'Victoria Secret', link: 'https://www.victoriassecret.com'}),
   ])
 
   const places = await Promise.all([
@@ -52,23 +52,23 @@ async function seed () {
     
   ])
 
-  const links = await Promise.all([
-    Link.create({link: 'https://www.zara.com/us/'}),
-    Link.create({link: 'https://shop.mango.com/us'}),
-    Link.create({link: 'http://us.topshop.com/'}),
-    Link.create({link: 'https://www.gap.com'}),
-    Link.create({link: 'https://www.levi.com/US/en_US/'}),
-    Link.create({link: 'https://www.victoriassecret.com'})
-  ])
+  // const links = await Promise.all([
+  //   Link.create({link: 'https://www.zara.com/us/'}),
+  //   Link.create({link: 'https://shop.mango.com/us'}),
+  //   Link.create({link: 'http://us.topshop.com/'}),
+  //   Link.create({link: 'https://www.gap.com'}),
+  //   Link.create({link: 'https://www.levi.com/US/en_US/'}),
+  //   Link.create({link: 'https://www.victoriassecret.com'})
+  // ])
 
-  const addLinksToBrands = await Promise.all([
-    Brand.findById(1).then(brand => brand.setLink(1)),
-    Brand.findById(2).then(brand => brand.setLink(2)),
-    Brand.findById(3).then(brand => brand.setLink(3)),
-    Brand.findById(4).then(brand => brand.setLink(4)),
-    Brand.findById(5).then(brand => brand.setLink(5)),
-    Brand.findById(6).then(brand => brand.setLink(6)),
-  ])
+  // const addLinksToBrands = await Promise.all([
+  //   Brand.findById(1).then(brand => brand.setLink(1)),
+  //   Brand.findById(2).then(brand => brand.setLink(2)),
+  //   Brand.findById(3).then(brand => brand.setLink(3)),
+  //   Brand.findById(4).then(brand => brand.setLink(4)),
+  //   Brand.findById(5).then(brand => brand.setLink(5)),
+  //   Brand.findById(6).then(brand => brand.setLink(6)),
+  // ])
 
   const addsToBrands = await Promise.all([
     Brand.findById(1).then(brand => brand.setPlaces([1, 2])),

@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import {connect} from 'react-redux'
+import axios from 'axios';
+import store from '../store';
+import Navbar from './navbar';
 import { fetchAllBrands } from '../store/brands';
-import { fetchAllCategories, createNewCloset } from '../store/categories';
+import {  createNewCloset } from '../store/closets';
+import {fetchAllCategories} from '../store/categories'
 
 // import {auth} from '../store'
 
@@ -35,13 +39,22 @@ class AddForm extends Component{
         event.preventDefault();
         const closetItem = {
             style: this.state.style,
-            size: this.state.size,
+            size: Number(this.state.size),
             brandId: Number(this.state.brandId),
-            categoryId: this.props.location.state.categ,
-            userId: this.state.userId
-        };
+            categoryId: 2,
+            userId: Number(this.props.user)
+        }
+        // this.props.createNewCloset(closetItem)
+        // this.setState({
+        //     style: '',
+        //     size: '',
+        //     brandId: '',
+        //     categoryId: '',
+        //     userId: ''
+        // })
+        // console.log("Form is submitted!!", newTrip)
         axios.post('/api/closets', closetItem)
-        console.log('!!!!!!1', closetItem)
+        // console.log('!!!!!!1', closetItem)
             .then(res => {
                 let formattedRes = res.data;
                 store.dispatch(createNewCloset(formattedRes))
@@ -61,9 +74,14 @@ class AddForm extends Component{
     render() {
         // console.log('categories Data: ', this.props.brands)
         const brands = this.props.brands
-        const categories = this.props.categories
+        // const categories = this.props.location.state.categ
+        // console.log('params ' ,this.props)
         // console.log('this.state.state.categories.id ', categories)
-        // console.log("state brand ", this.state.brandId)
+        console.log("state brand ", this.state.brandId)
+        console.log("size ", this.state.size)
+        console.log("style ", this.state.style)
+        console.log("userId", this.props.user)
+
         // console.log('whole OBJECT ', this.state.closetItem)
 
         
@@ -74,7 +92,8 @@ class AddForm extends Component{
 
         return (
             <div className='form'>
-            <form onSubmit={this.handleSubmit}>
+            <Navbar />
+            <form className="add-form" onSubmit={this.handleSubmit}>
                 <div>
                     <h2> Add Your Size</h2>
                     <label className="brand">Brand</label>
@@ -91,19 +110,6 @@ class AddForm extends Component{
                     </select>
                 </div>
                 <div>
-                    {/* <label className="category">Category</label>
-                    <select className="form-control" id="sel1">
-                        {
-                            categories.map(category => {
-                                return (
-                                    // <option key="0">Select</option>
-                                    <option key={category.id}>{category.name}</option>
-                                )
-                            })
-                        }
-                    </select> */}
-                </div>
-                <div>
                     <label className="size">Size</label>
                     <input name="size" type="number" onChange={this.handleChange}  value={this.state.size}/>
                 </div>
@@ -112,7 +118,7 @@ class AddForm extends Component{
                     <input name="style" type="text" onChange={this.handleChange}  value={this.state.style}/>
                 </div>
                 <div>
-                    <Link className='categories' to={`/home`}><button type="submit">Add</button></Link>
+                    <button className="add" type="submit">Add</button>
                 </div>
             </form>
             </div>
@@ -123,11 +129,12 @@ class AddForm extends Component{
 const mapState = state => {
     return {
       brands: state.brands,
-      categories: state.categories
+      categories: state.categories,
+      user: state.user.id,
     }
   }
   
-  const mapDispatch = dispatch => {
+  const mapDispatch = (dispatch) => {
    return {
      getAllBrands: () => {
        dispatch(fetchAllBrands());
@@ -135,8 +142,7 @@ const mapState = state => {
      getAllCategories: () => {
         dispatch(fetchAllCategories());
     }
-     
-   }
+}
 }
 
 export default connect(mapState, mapDispatch)(AddForm);
