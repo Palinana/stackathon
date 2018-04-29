@@ -93,14 +93,14 @@ class SingleCloset extends Component {
         // console.log('state linkd ', linkKS)    
 
         return (
-          <div> 
-              <Navbar />  
-              <a href={linkKS}><button onClick={this.handleClick}>Go to {name} website</button></a>
-
+          <div className="main-single-page"> 
+              <Navbar />
+              <a href={linkKS}><button className="btn-site-link" onClick={this.handleClick}>Go to {name} website</button></a>
+               
             {
                 <div className="order-list"  key={item.id}>
-                    <h3>Category: {closetCategory}</h3>
-                    <h3>Size: {item.size}</h3><button onClick={this.onClick.bind(this)}>Edit</button>          
+                    <h3 className="single-item-info">Category: {closetCategory}</h3>
+                    <h3 className="single-item-info">Size: {item.size}</h3><button className="edit-btn" onClick={this.onClick.bind(this)}>Edit</button>          
                         {this.state.isClicked && 
                                 <div className='form'>
                                 <form onSubmit={this.handleSubmit}>
@@ -112,20 +112,18 @@ class SingleCloset extends Component {
                                         <input name="size" type="number" onChange={this.handleChange}  value={this.state.size}/>
                                     </div>
                                     <div>
-                                        <button type="submit">Change</button>
+                                        <button className="change-size" type="submit">Change</button>
                                     </div>
                                 </form>
                                 </div>
                         }
-                    <h3>Brand: {name}</h3>
-                    <h3>Style: {item.style}</h3>
-                    <h3>Link: {link}</h3>
-        
+                    <h3 className="single-item-info">Brand: {name}</h3>
+                    <h3 className="single-item-info">Style: {item.style}</h3>        
                 </div>
             }
-            <div>{name} stores</div>
+            <div className="brand-map">{name} stores</div>
             <MapContainer singleBrandId={this.props.selectedCloset.brandId}/>
-            <Link className='categories' to={`/home`}><button type="submit">Back</button></Link>
+            {/* <Link className='categories' to={`/home`}><button type="submit">Back</button></Link> */}
           </div>
         )
       }

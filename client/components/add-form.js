@@ -60,7 +60,7 @@ class AddForm extends Component{
                 store.dispatch(createNewCloset(formattedRes))
             })
             .then(() => { 
-                this.props.history.push('/closets')
+                this.props.history.push('/categories')
             })
             .catch(err => console.error(err))
     }

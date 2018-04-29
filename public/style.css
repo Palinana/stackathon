@@ -18,17 +18,32 @@ label {
 nav a {
   display: inline-block;
   margin: 1em;
-  
+  text-decoration: none;
+  color: black; 
+}
+nav a:hover {
+  display: inline-block;
+  margin: 1em;
+  text-decoration: none;
+  font-size: 18px; 
+  color: rgb(133, 23, 40); 
 }
 .navbar{
   text-align: center;
-}
+  background: rgb(205, 212, 212);}
 /* form div {
   margin: 1em;
   display: inline-block;
 } */
 
+
+
+
 /* login page */
+.login-main{
+  background: linear-gradient(to left, #8e9eab, #eef2f3);
+}
+
 .form-container{
   width:100%;
 	margin:auto;
@@ -38,30 +53,55 @@ nav a {
   background:rgba(0,0,0,.1);
 }
 .login-form{
-  width:100%;
-	margin:auto;
-	max-width:525px;
-	min-height:670px;
-	position:relative;
+    display: block;
+    text-align: center;
+    padding-top: 110px;
 }
-.label{
+.label-email{
   text-transform: uppercase;
   color: rgb(0, 0, 0);
   font-size: 12px;
-  
 }
-.input{
-  border: none;
+.label-pass{
+  text-transform: uppercase;
+  color: rgb(0, 0, 0);
+  font-size: 12px;
+}
+.input-email{
+  border: 1.5px solid;
   padding: 15px 20px;
-  border-radius: 25px;
+  width: 400px;
+  height: 35px;
+  background: rgba(255,255,255,.1);
+}
+.input-pass{
+  border: 1.5px solid;
+  margin-top: 20px;
+  padding: 15px 20px;
+  width: 400px;
+  height: 35px;
   background: rgba(255,255,255,.1);
 }
 .login-button{
   border: none;
-  padding: 15px 20px;
-  border-radius: 25px;
-  background: #60759b;
+    padding: 15px 20px;
+    background: #E9E6DD;
+    width: 430px;
+    height: 60px;
+    display: flex;
+    display: block;
+    margin: 0 auto;
+    margin-top: 100px;
+    font-size: 12px;
+    text-transform: uppercase;
 }
+.login-button:hover{
+  background: rgb(206, 200, 184);
+}
+
+
+
+
 /* categories pages */
 /* .categories{
   display: flex;
@@ -70,9 +110,15 @@ nav a {
 } */
 .category-list{
   text-align: center;
-  margin-top: 40px;
-  font-size: 2.2em;
-  margin-bottom: -40px;
+    margin-top: -20px;
+    font-size: 2.2em;
+    padding-top: 40px;
+    margin-bottom: 30px;
+    background-color: #E9E6DD;
+}
+.container{
+  background-color: #E9E6DD;
+  height: 860px;
 }
 .categories{
   display: flex;
@@ -88,13 +134,15 @@ nav a {
     flex-wrap: wrap;
     border: 3px solid black;
     padding: 50px 30px;
+    background-color:rgb(205, 212, 212);
+    
 }
 
 .cat-item{
     margin: 5px;
     height: 200px;
     width: 250px;
-    background-color: gray;
+    background-color: white;
 }
 .cat-item[react_id='0']{
   background-image: url('/images/shirt.png');
@@ -205,37 +253,60 @@ nav a {
 /* .categories:first-child{
   background-color: yellow;
 } */
+
+
+
+
+
 /* closet */
+.main-closet{
+  background-color: #E9E6DD;
+  height: 800px;
+}
+.all-from-closet{
+  background-color: white;
+  margin-left: 90px;
+  margin-right: 90px;
+  padding-top: 40px;
+  border: 1.5px solid;
+}
 .closets{
   display: flex;
-    width: 1100px;
-    margin-left: 90px;
-    margin-top: 100px;
-    flex-wrap: wrap;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+  width: 1100px;
+  margin-left: -300px;
+  margin-top: 0px;
+  /* margin-bottom: 30px; */
+  flex-wrap: wrap;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: black;
 }
-/* .add-item{
-  display: flex;
-    width: 1100px;
-    margin-left: 90px;
-    margin-top: 100px;
-    flex-wrap: wrap;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-} */
+
+.order-list{
+  margin-top: -40px;
+  margin-bottom: 25px;
+}
+.your-closet-text{
+  /* text-align: center;
+  margin-top: 80px;
+  margin-bottom: -30px; */
+  text-align: center;
+  margin-top: 80px;
+}
+.closet-list{
+  margin: 30px;
+}
+
 .add-item-btn{
   display: flex;
-    width: 1100px;
-    margin-left: 90px;
+  display:block;
+  width: 130px;
+  height: 30px;
+    margin: 0 auto;
     margin-top: 100px;
     flex-wrap: wrap;
     flex-direction: row;
@@ -244,18 +315,40 @@ nav a {
     justify-items: center;
     justify-content: center;
     flex-wrap: wrap;
+    font-size: 13px;
+    background: rgb(205, 212, 212);
+}
+.add-item-btn:hover{
+  background: rgb(172, 180, 180);
 }
 .delete-btn{
-
+  float: right;
+    margin-right: 40px;
+    width: 90px;
+    height: 28px;
+    margin-top: -51px;
+    background: rgb(133, 23, 40);
+    color: white;
+    font-size: 13px;
 }
+
+
+
+
+
 
 /* add page */
 .form{
   display: block;
-    text-align: center;
+  text-align: center;
+  background-color: #E9E6DD;
+  height: 800px;
+
+  /* background: #EDEDED; */
 }
 .add-form{
-  background: #F1E8DD;
+  /* background: #F1E8DD; */
+  background: white;
     width: 500px;
     height: 500px;
     margin-top: 65px;
@@ -269,8 +362,10 @@ label {
 input {
   width: 400px;
   height: 35px;
-  /* opacity: 0;
-  transform: translateY(1rem); */
+  border: 2px solid;
+  text-align: center;
+  font-size: 18px;
+  
 } 
 .form-add-text{
   margin: 40px;
@@ -281,6 +376,8 @@ select{
   -webkit-appearance: none;
   -webkit-border-radius: 0px;
   text-align-last: center;
+  background-color: white;
+  border: 2px solid;
 }
 .list-item{
   margin: 20px;
@@ -289,4 +386,65 @@ select{
   width: 400px;
   height: 45px;
   margin-top: 50px;
+  background-color: rgb(133, 23, 40);
+  color: white;
+  font-size: 15px;
+}
+
+
+
+
+/* SIngle Page */
+.main-single-page{
+  background-color: #E9E6DD;
+} 
+.order-list{
+  display: inline-block;
+  margin-top: 60px;
+  margin-left: 230px;
+}
+
+.edit-btn{
+  float: right;
+    margin-top: -51px;
+    margin-right: -100px;
+    width: 90px;
+    height: 25px;
+    background:  rgb(133, 23, 40);
+    color: white;
+}
+.change-size{
+  background: rgb(205, 212, 212);
+    width: 90px;
+    height: 25px;
+    margin-top: 21px;
+}
+.single-item-info{
+  margin-bottom: 30px;
+}
+.brand-map{
+  text-align: left;
+    margin-left: 290px;
+    margin-top: 60px;
+    font-size: 1.3em;
+    margin-bottom: -20px;
+    background-color: #E9E6DD;
+}
+.btn-site-link{
+  float: right;
+  margin-top: 600px;
+  margin-right: 280px;
+  width: 110px;
+  height: 30px;
+  background:  rgb(133, 23, 40);
+  color: white;
+}
+select {
+    background-position: 300px;
+    width: 404px;
+    margin-top: 8px;
+    line-height: 1;
+    font-size: 20px;
+    -webkit-appearance: none;
+    outline: none;
 }

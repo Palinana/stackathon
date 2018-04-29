@@ -30,9 +30,9 @@ class Routes extends Component {
             <Switch>
               {/* Routes placed here are only available after logging in */}
               <Route path="/user" component={UserHome} />
-              <Route exact path="/categories" component={Categories} /> 
+              <Route exact path="/home" component={Categories} /> 
               <Route exact path="/add" component={AddForm} /> 
-              <Route exact path="/home" component={Closet} />
+              <Route exact path="/categories" component={Closet} />
               <Route exact path="/closets/:id" component={SingleCloset} />  
             </Switch>
         }
