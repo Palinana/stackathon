@@ -1,10 +1,15 @@
 body {
   font-family: sans-serif;
+  background-color: #F7F7F7;
 }
 
 a {
   text-decoration: none;
 }
+
+/* a:nth-child(1){
+  background-color: yellow;
+} */
 
 label {
   display: block;
@@ -13,12 +18,15 @@ label {
 nav a {
   display: inline-block;
   margin: 1em;
+  
 }
-
-form div {
+.navbar{
+  text-align: center;
+}
+/* form div {
   margin: 1em;
   display: inline-block;
-}
+} */
 
 /* login page */
 .form-container{
@@ -53,4 +61,122 @@ form div {
   padding: 15px 20px;
   border-radius: 25px;
   background: #60759b;
+}
+/* categories pages */
+/* .categories{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row 
+} */
+.category-list{
+  text-align: center;
+  margin-top: 40px;
+  font-size: 2.2em;
+  margin-bottom: -40px;
+}
+.categories{
+  display: flex;
+    width: 1100px;
+    margin-left: 90px;
+    margin-top: 100px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    border: 3px solid black;
+    padding: 50px 30px;
+}
+
+.cat-item{
+    margin: 5px;
+    height: 200px;
+    width: 250px;
+    background-color: gray;
+}
+
+.categories:first-child{
+  background-color: yellow;
+}
+/* closet */
+.closets{
+  display: flex;
+    width: 1100px;
+    margin-left: 90px;
+    margin-top: 100px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+/* .add-item{
+  display: flex;
+    width: 1100px;
+    margin-left: 90px;
+    margin-top: 100px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+} */
+.add-item-btn{
+  display: flex;
+    width: 1100px;
+    margin-left: 90px;
+    margin-top: 100px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.delete-btn{
+
+}
+
+/* add page */
+.form{
+  display: block;
+    text-align: center;
+}
+.add-form{
+  background: #F1E8DD;
+    width: 500px;
+    height: 500px;
+    margin-top: 65px;
+
+    text-align: center;
+    display: inline-block;
+}
+label {
+  /* position: absolute;
+  top: 0;
+  font-size: var(--font-size-small);
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.2s ease-out; */
+}
+input {
+  width: 400px;
+  height: 35px;
+  /* opacity: 0;
+  transform: translateY(1rem); */
+} 
+select{
+  width: 400px;
+  height: 35px;
+}
+.add{
+  width: 400px;
+  height: 35px;
 }
