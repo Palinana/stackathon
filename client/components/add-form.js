@@ -94,8 +94,8 @@ class AddForm extends Component{
             <div className='form'>
             <Navbar />
             <form className="add-form" onSubmit={this.handleSubmit}>
-                <div>
-                    <h2> Add Your Size</h2>
+                <div className="select-div">
+                    <h2 className="form-add-text"> Add Your Size</h2>
                     <label className="brand">Brand</label>
                     <select  onChange={this.handleChange}  name="brandId" className="form-control" id="sel1" >
                         <option value='1'>Select</option>
@@ -109,15 +109,15 @@ class AddForm extends Component{
                         }
                     </select>
                 </div>
-                <div>
+                <div className="list-item">
                     <label className="size">Size</label>
                     <input name="size" type="number" onChange={this.handleChange}  value={this.state.size}/>
                 </div>
-                <div>
+                <div className="list-item">
                     <label className="model">Model</label>
                     <input name="style" type="text" onChange={this.handleChange}  value={this.state.style}/>
                 </div>
-                <div>
+                <div className="list-item">
                     <button className="add" type="submit">Add</button>
                 </div>
             </form>

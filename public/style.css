@@ -96,10 +96,115 @@ nav a {
     width: 250px;
     background-color: gray;
 }
-
-.categories:first-child{
-  background-color: yellow;
+.cat-item[react_id='0']{
+  background-image: url('/images/shirt.png');
+  background-size:cover;
+  -webkit-transition: all 1s ease-in-out; ;
+  -moz-transition: all 1s ease-in-out; 
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  border: 2px solid black;
 }
+.cat-item[react_id='1']{
+  background-image: url('/images/jeans.png');
+  background-size:cover;
+  -webkit-transition: all 1s ease-in-out; ;
+  -moz-transition: all 1s ease-in-out; 
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  border: 2px solid black;
+}
+.cat-item[react_id='2']{
+  background-image: url('/images/oxford-wave-suit-pants.png');
+  background-size:cover;
+  -webkit-transition: all 1s ease-in-out; ;
+  -moz-transition: all 1s ease-in-out; 
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  border: 2px solid black;
+}
+.cat-item[react_id='3']{
+  background-image: url('/images/high-heels.png');
+  background-size:cover;
+  -webkit-transition: all 1s ease-in-out; ;
+  -moz-transition: all 1s ease-in-out; 
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  border: 2px solid black;
+}
+.cat-item[react_id='4']{
+  background-image: url('/images/lingerine-set.png');
+  background-size:cover;
+  -webkit-transition: all 1s ease-in-out; ;
+  -moz-transition: all 1s ease-in-out; 
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  border: 2px solid black;
+}
+.cat-item[react_id='5']{
+  background-image: url('/images/pamela.png');
+  background-size:cover;
+  -webkit-transition: all 1s ease-in-out; ;
+  -moz-transition: all 1s ease-in-out; 
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  border: 2px solid black;
+}
+.cat-item[react_id='6']{
+  background-image: url('/images/belt.png');
+  background-size:cover;
+  -webkit-transition: all 1s ease-in-out; ;
+  -moz-transition: all 1s ease-in-out; 
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  border: 2px solid black;
+}
+
+.cat-item[react_id='7']{
+  background-image: url('/images/swimsuit.png');
+  background-size:cover;
+  -webkit-transition: all 1s ease-in-out; ;
+  -moz-transition: all 1s ease-in-out; 
+  -o-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  border: 2px solid black;
+}
+
+.cat-item[react_id='0']:hover{
+  width: 240px;
+  height: 210px;
+}
+.cat-item[react_id='1']:hover{
+  width: 240px;
+  height: 210px;
+}
+.cat-item[react_id='2']:hover{
+  width: 240px;
+  height: 210px;
+}
+.cat-item[react_id='3']:hover{
+  width: 240px;
+  height: 210px;
+}
+.cat-item[react_id='4']:hover{
+  width: 240px;
+  height: 210px;
+}
+.cat-item[react_id='5']:hover{
+  width: 240px;
+  height: 210px;
+}
+.cat-item[react_id='6']:hover{
+  width: 240px;
+  height: 210px;
+}
+.cat-item[react_id='7']:hover{
+  width: 240px;
+  height: 210px;
+}
+/* .categories:first-child{
+  background-color: yellow;
+} */
 /* closet */
 .closets{
   display: flex;
@@ -159,12 +264,7 @@ nav a {
     display: inline-block;
 }
 label {
-  /* position: absolute;
-  top: 0;
-  font-size: var(--font-size-small);
-  opacity: 1;
-  transform: translateY(0);
-  transition: all 0.2s ease-out; */
+  margin-bottom: 6px;
 }
 input {
   width: 400px;
@@ -172,11 +272,21 @@ input {
   /* opacity: 0;
   transform: translateY(1rem); */
 } 
+.form-add-text{
+  margin: 40px;
+}
 select{
   width: 400px;
-  height: 35px;
+  height: 40px;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+  text-align-last: center;
+}
+.list-item{
+  margin: 20px;
 }
 .add{
   width: 400px;
-  height: 35px;
+  height: 45px;
+  margin-top: 50px;
 }

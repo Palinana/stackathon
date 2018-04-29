@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Navbar from './navbar';
 import { fetchSingleCloset, updateClosetItem } from '../store/closets';
-// import { fetchSingleBrand } from '../store/brands';
 import MapContainer from './map'
 import axios from 'axios';
 import store from '../store';
@@ -84,37 +83,20 @@ class SingleCloset extends Component {
         console.log('selectedCloset ', item)
    
         let {name, link} = item.brand || {};
-        // let {link}  = item.brand || {};
-        // console.log('LInk : ', link)
+       
         let {name : closetCategory} = item.category || {};
 
         const brands = this.props.brands
-        // console.log('his.props.match.params.id', this.props.match.params.id)
-        // console.log('selectedCloset ', item)
-        console.log('state.links', this.state.links[2-1])
-        const linkKS = this.state.links[2-1]
-        // .map( (x, ind) => {
-            // console.log("item id***",item.id)
-            // console.log(x[ind+1])
-            // return x[ind+1] === item.id
-
-            
-
-        // })
-        
-        // const linkKS = this.state.links.map((x,ind) => {
-        //     // console.log('filter id', x[1])
-        //     if(x[ind+1] === item2){
-        //         return x[ind+1]
-        //     }
-        // })
-        console.log('item2', item2)
-        console.log('state linkd ', linkKS)
+       
+        const linkKS = this.state.links[item2-1]
     
+        // console.log('state linkd ', linkKS)    
 
         return (
           <div> 
               <Navbar />  
+              <a href={linkKS}><button onClick={this.handleClick}>Go to {name} website</button></a>
+
             {
                 <div className="order-list"  key={item.id}>
                     <h3>Category: {closetCategory}</h3>
@@ -143,8 +125,6 @@ class SingleCloset extends Component {
             }
             <div>{name} stores</div>
             <MapContainer singleBrandId={this.props.selectedCloset.brandId}/>
-            {/* <a href="https://www.google.com">here</a> */}
-            <a href="https://www.google.com"><button onClick={this.handleClick}>Go to {name} website</button></a>
             <Link className='categories' to={`/home`}><button type="submit">Back</button></Link>
           </div>
         )
@@ -166,9 +146,6 @@ const mapDispatch = dispatch => {
         getSingleCloset: (id) => {
             dispatch(fetchSingleCloset(id));
         }
-        // getSingleBrand: (id) => {
-        //     dispatch(fetchSingleBrand(id))
-        // }
     }
 }    
 

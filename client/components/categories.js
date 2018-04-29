@@ -28,8 +28,16 @@ class Categories extends Component {
                  {
                      categories.map((category, i) => {
                         return (
+                            
+                            // <div className="cat-item" >{category.name}
+                            // <Link to={{pathname: '/add', state: { categ: category.id}}} className='category' key={category.id}>
+                            // <img className="img-thumbnail" react_id={`${i}`} src={`/images/${i}.png`} />
+                            // </Link>
+                            // </div>
+                           
+                            
                             <Link to={{pathname: '/add', state: { categ: category.id}}} className='category' key={category.id}>
-                            <div className="cat-item" react_id={`id_${i}`}>{category.name}</div>
+                            <div className="cat-item" react_id={`${i}`}>{category.name}</div>
                             </Link>
                         )
                       })
