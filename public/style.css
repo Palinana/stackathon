@@ -20,6 +20,7 @@ nav a {
   margin: 1em;
   text-decoration: none;
   color: black; 
+  margin-top: 25px;
 }
 nav a:hover {
   display: inline-block;
@@ -30,7 +31,10 @@ nav a:hover {
 }
 .navbar{
   text-align: center;
-  background: rgb(205, 212, 212);}
+  background: rgb(205, 212, 212);
+  height: 70px;
+  /* box-shadow: 0 6px 11px -6px #999; */
+}
 /* form div {
   margin: 1em;
   display: inline-block;
@@ -132,12 +136,15 @@ nav a:hover {
     justify-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    border: 3px solid black;
+    border: 1px solid black;
     padding: 50px 30px;
     background-color:rgb(205, 212, 212);
-    
+    box-shadow: 0 8px 6px -6px #999;
 }
-
+.img-thumbnail{
+  margin: 30px 60px;
+  
+}
 .cat-item{
     margin: 5px;
     height: 200px;
@@ -145,7 +152,7 @@ nav a:hover {
     background-color: white;
 }
 .cat-item[react_id='0']{
-  background-image: url('/images/shirt.png');
+  background-image: url('/images/0.png');
   background-size:cover;
   -webkit-transition: all 1s ease-in-out; ;
   -moz-transition: all 1s ease-in-out; 
@@ -154,7 +161,7 @@ nav a:hover {
   border: 2px solid black;
 }
 .cat-item[react_id='1']{
-  background-image: url('/images/jeans.png');
+  background-image: url('/images/1.png');
   background-size:cover;
   -webkit-transition: all 1s ease-in-out; ;
   -moz-transition: all 1s ease-in-out; 
@@ -163,7 +170,7 @@ nav a:hover {
   border: 2px solid black;
 }
 .cat-item[react_id='2']{
-  background-image: url('/images/oxford-wave-suit-pants.png');
+  background-image: url('/images/2.png');
   background-size:cover;
   -webkit-transition: all 1s ease-in-out; ;
   -moz-transition: all 1s ease-in-out; 
@@ -172,7 +179,7 @@ nav a:hover {
   border: 2px solid black;
 }
 .cat-item[react_id='3']{
-  background-image: url('/images/high-heels.png');
+  background-image: url('/images/3.png');
   background-size:cover;
   -webkit-transition: all 1s ease-in-out; ;
   -moz-transition: all 1s ease-in-out; 
@@ -181,7 +188,7 @@ nav a:hover {
   border: 2px solid black;
 }
 .cat-item[react_id='4']{
-  background-image: url('/images/lingerine-set.png');
+  background-image: url('/images/4.png');
   background-size:cover;
   -webkit-transition: all 1s ease-in-out; ;
   -moz-transition: all 1s ease-in-out; 
@@ -190,7 +197,7 @@ nav a:hover {
   border: 2px solid black;
 }
 .cat-item[react_id='5']{
-  background-image: url('/images/pamela.png');
+  background-image: url('/images/5.png');
   background-size:cover;
   -webkit-transition: all 1s ease-in-out; ;
   -moz-transition: all 1s ease-in-out; 
@@ -199,7 +206,7 @@ nav a:hover {
   border: 2px solid black;
 }
 .cat-item[react_id='6']{
-  background-image: url('/images/belt.png');
+  background-image: url('/images/6.png');
   background-size:cover;
   -webkit-transition: all 1s ease-in-out; ;
   -moz-transition: all 1s ease-in-out; 
@@ -209,7 +216,7 @@ nav a:hover {
 }
 
 .cat-item[react_id='7']{
-  background-image: url('/images/swimsuit.png');
+  background-image: url('/images/7.png');
   background-size:cover;
   -webkit-transition: all 1s ease-in-out; ;
   -moz-transition: all 1s ease-in-out; 
@@ -218,7 +225,7 @@ nav a:hover {
   border: 2px solid black;
 }
 
-.cat-item[react_id='0']:hover{
+/* .cat-item[react_id='0']:hover{
   width: 240px;
   height: 210px;
 }
@@ -249,7 +256,7 @@ nav a:hover {
 .cat-item[react_id='7']:hover{
   width: 240px;
   height: 210px;
-}
+} */
 /* .categories:first-child{
   background-color: yellow;
 } */
@@ -261,7 +268,27 @@ nav a:hover {
 /* closet */
 .main-closet{
   background-color: #E9E6DD;
-  height: 800px;
+  height: 2000px;
+}
+.user-name{
+  font-size: 1.5em;
+  margin-right: 530px;
+  float: right;
+  font-size: 3em;
+  margin-bottom: 30px;
+}
+.user-image{
+  /* margin-right: 90px; */
+  margin-top: 50px;
+  /* margin-bottom: 0px; */
+  width: 180px;
+  height: 190px;
+}
+.name{
+  float: right;
+  margin-top: 120px;
+  font-size: 60px;
+  margin-left: 60px;
 }
 .all-from-closet{
   background-color: white;
@@ -273,7 +300,7 @@ nav a:hover {
 .closets{
   display: flex;
   width: 1100px;
-  margin-left: -300px;
+  margin-left: -255px;
   margin-top: 0px;
   /* margin-bottom: 30px; */
   flex-wrap: wrap;
@@ -285,7 +312,16 @@ nav a:hover {
   flex-wrap: wrap;
   color: black;
 }
-
+.clothes-container{
+  margin-right: 50px;
+}
+.clothes-image-container{
+  float: left;
+  margin-left: -110px;
+}
+.clothes-list-container{
+  display: inline-flex;
+}
 .order-list{
   margin-top: -40px;
   margin-bottom: 25px;
@@ -295,11 +331,20 @@ nav a:hover {
   margin-top: 80px;
   margin-bottom: -30px; */
   text-align: center;
-  margin-top: 80px;
+  /* margin-top: 80px; */
+
+  margin-top: 290px;
 }
 .closet-list{
   margin: 30px;
 }
+
+.img-in-closet{
+  width: 70px;
+ height: 65px;
+ margin-top: 10px;
+}
+
 
 .add-item-btn{
   display: flex;
@@ -318,6 +363,7 @@ nav a:hover {
     font-size: 13px;
     background: rgb(205, 212, 212);
 }
+
 .add-item-btn:hover{
   background: rgb(172, 180, 180);
 }
@@ -394,6 +440,8 @@ select{
 
 
 
+
+
 /* SIngle Page */
 .main-single-page{
   background-color: #E9E6DD;
@@ -429,14 +477,22 @@ select{
     font-size: 1.3em;
     margin-bottom: -20px;
     background-color: #E9E6DD;
+    padding-bottom: 30px;
 }
+
 .btn-site-link{
   float: right;
-  margin-top: 600px;
+  margin-top: 320px;
   margin-right: 280px;
-  width: 110px;
+  width: 150px;
   height: 30px;
-  background:  rgb(133, 23, 40);
+  border: 3px solid rgb(133, 23, 40);
+  background-color: transparent;
+  background: #E9E6DD;
+
+}
+.btn-site-link:hover {
+  background: rgb(133, 23, 40);
   color: white;
 }
 select {

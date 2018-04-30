@@ -29,16 +29,16 @@ class Categories extends Component {
                             categories.map((category, i) => {
                                 return (
                                     
-                                    // <div className="cat-item" >{category.name}
-                                    // <Link to={{pathname: '/add', state: { categ: category.id}}} className='category' key={category.id}>
-                                    // <img className="img-thumbnail" react_id={`${i}`} src={`/images/${i}.png`} />
-                                    // </Link>
-                                    // </div>
+                                    <div className="cat-item" >{category.name}
+                                    <Link to={{pathname: '/add', state: { categ: category.id}}} className='category' key={category.id}>
+                                    <img className="img-thumbnail" react_id={`${i}`} src={`../images/${i}.png`} />
+                                    </Link>
+                                    </div>
                                     // {category.name}
                                     
-                                    <Link to={{pathname: '/add', state: { categ: category.id}}} className='category' key={category.id}>
-                                    <div className="cat-item" react_id={`${i}`}></div>
-                                    </Link>
+                                    // <Link to={{pathname: '/add', state: { categ: category.id}}} className='category' key={category.id}>
+                                    // <div className="cat-item" react_id={`${i}`}></div>
+                                    // </Link>
                                 )
                             })
                         }

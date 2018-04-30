@@ -28,6 +28,9 @@ class AddForm extends Component{
     componentDidMount(){
         this.props.getAllBrands();
         this.props.getAllCategories();
+        const categories = this.props.location.state.categ
+        console.log('params ' ,this.props)
+
         // const {handle}  = this.props.match.params;
         // const {cat} = this.props.location.state
     }
@@ -39,9 +42,9 @@ class AddForm extends Component{
         event.preventDefault();
         const closetItem = {
             style: this.state.style,
-            size: Number(this.state.size),
+            size: this.state.size,
             brandId: Number(this.state.brandId),
-            categoryId: 2,
+            categoryId: this.props.location.state.categ,
             userId: Number(this.props.user)
         }
         // this.props.createNewCloset(closetItem)
@@ -74,13 +77,12 @@ class AddForm extends Component{
     render() {
         // console.log('categories Data: ', this.props.brands)
         const brands = this.props.brands
-        // const categories = this.props.location.state.categ
-        // console.log('params ' ,this.props)
+        
         // console.log('this.state.state.categories.id ', categories)
-        console.log("state brand ", this.state.brandId)
-        console.log("size ", this.state.size)
-        console.log("style ", this.state.style)
-        console.log("userId", this.props.user)
+        // console.log("state brand ", this.state.brandId)
+        // console.log("size ", this.state.size)
+        // console.log("style ", this.state.style)
+        // console.log("userId", this.props.user)
 
         // console.log('whole OBJECT ', this.state.closetItem)
 
@@ -110,11 +112,11 @@ class AddForm extends Component{
                     </select>
                 </div>
                 <div className="list-item">
-                    <label className="size">Size</label>
-                    <input name="size" type="number" onChange={this.handleChange}  value={this.state.size}/>
+                    <label className="size" >Size</label>
+                    <input placeholder="Enter your size" name="size" pattern="[a-zA-Z0-9-]+" type="text" onChange={this.handleChange}  value={this.state.size}/>
                 </div>
                 <div className="list-item">
-                    <label className="model">Model</label>
+                    <label className="model">Style</label>
                     <input name="style" type="text" onChange={this.handleChange}  value={this.state.style}/>
                 </div>
                 <div className="list-item">

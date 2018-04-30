@@ -40,12 +40,14 @@ class Closet extends Component {
     render() {
     
     console.log("CLOSET ", this.props.closets)
+    // console.log("USER ", this.props.user)
     // console.log("STST id ", this.props.closetId)
       const closets = this.props.closets;
-
+      const userName = this.props.user.name;
         return (
           <div className="main-closet">
             <Navbar /> 
+            <div className="user-name"><img className="user-image" src="../images/woman.png"></img><div className="name" >Hi, {userName}!</div></div>
             <h1 className="your-closet-text">Your Sizes</h1>
             <div className="all-from-closet">
               {
@@ -53,24 +55,32 @@ class Closet extends Component {
                   let closetBrand = closet.brand.name;
                   // console.log('closet brand: ', closetBrand)
                   let closetCategory = closet.category.name;
+                  let categId = closet.category;
+                  // console.log('categId ', categId)
                   // console.log('closet cat: ', closetCategory)
+                  // console.log('closet.category ', closet.category.id)
+
                   return (
                   <div className="order-list"  key={closet.id}>
                     <Link className='closets' to={`/closets/${closet.id}`}>
-                      <h3 className="closet-list">Category: {closetCategory} </h3>
-                      <h3 className="closet-list">Size: {closet.size}</h3>
-                      <h3 className="closet-list">Brand: {closetBrand}</h3>
-                      {/* { closet.style ? 
-                      <h3 className="closet-list">Style: {closet.style}</h3> : null
-                       } */}
-                      <h3 className="closet-list">Style: {closet.style}</h3>
+                    <div className="clothes-container">
+                        <div className="clothes-image-container"></div>
+                        <div className="clothes-list-container">
+                        <h3 className="closet-list">Category: {closetCategory} </h3>
+                        <h3 className="closet-list">Size: {closet.size}</h3>
+                        <h3 className="closet-list">Brand: {closetBrand}</h3>
+                          { closet.style ? 
+                          <h3 className="closet-list">Style: {closet.style}</h3> : null
+                          }
+                        </div>
+                       </div>
                       </Link>
                       <button className="delete-btn" onClick={((e) => this.handleItemDelete(e, closet.id))}>Delete</button>
                   </div>
                   )})
               }
             </div>
-            <Link className="add-item" to={`/categories`}>
+            <Link className="add-item" to={`/home`}>
             <button  className="add-item-btn">Add an Item</button></Link>
             
           </div>

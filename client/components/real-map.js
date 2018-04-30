@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { GoogleApiWrapper, InfoWindow, Map, Marker } from 'google-maps-react';
+import { GoogleApiWrapper, InfoWindow, Map, Marker,Paper } from 'google-maps-react';
 // import Paper from 'material-ui/Paper';
 // import Typography from 'material-ui/Typography';
 // import { typography } from 'material-ui/styles';
@@ -16,18 +16,37 @@ export class MapContainerNew extends Component {
             {coordinates.map((marker,ind) => (
                     <Marker
                     position={{ lat: marker.lat, lng: marker.lng }}
+                    icon={{
+                      url: "../images/pin.png",
+                      anchor: new google.maps.Point(32,32),
+                      scaledSize: new google.maps.Size(35,35)
+                    }}
                     key={ind}
                     />
+                    
+                    
               ))}
+              {/* <InfoWindow
+                marker = { this.state.activeMarker }
+                visible = { this.state.showingInfoWindow }
+              >
+              <Paper>
+                >
+                  <Typography
+                    component = 'p'
+                  >
+                    98G Albe Dr Newark, DE 19702 <br />
+                    302-293-8627
+                  </Typography>
+              </Paper>
+              </InfoWindow> */}
+
   
-          {/* <Marker onClick={this.onMarkerClick}
-                  name={'Current location'} /> */}
-  
-          <InfoWindow onClose={this.onInfoWindowClose}>
+          {/* <InfoWindow onClose={this.onInfoWindowClose}>
               <div>
                 <h1>HI</h1>
               </div>
-          </InfoWindow>
+          </InfoWindow> */}
         </Map>
       );
     }

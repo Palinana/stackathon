@@ -19,7 +19,8 @@ async function seed () {
   // executed until that promise resolves!
 
   const users = await Promise.all([
-    User.create({email: 'cody@email.com', password: '123'}),
+    User.create({name: 'Anna', email: 'annasmith@email.com', password: '123'}),
+    User.create({name: 'Cody', email: 'cody@email.com', password: '123'}),
     User.create({email: 'murphy@email.com', password: '123'})
   ])
 
@@ -46,8 +47,10 @@ async function seed () {
   const places = await Promise.all([
     Place.create({latitude: '40.7225111', longitude: '-73.99957689999997'}),//zara
     Place.create({latitude: '40.7540008', longitude: '-73.98125820000001'}),//zara
+    Place.create({latitude: '40.774333', longitude: '-73.98252769999999'}),//zara
     Place.create({latitude: '40.7241534', longitude: '-73.9982225'}),//mango
     Place.create({latitude: '40.7497152', longitude: '-73.98692599999998'}),//levis
+    Place.create({latitude: '40.7626903', longitude: '-73.96826420000002'}),//levis
     Place.create({latitude: '40.7651088', longitude: '-73.98148779999997'}),//victoria
     
   ])
@@ -71,10 +74,10 @@ async function seed () {
   // ])
 
   const addsToBrands = await Promise.all([
-    Brand.findById(1).then(brand => brand.setPlaces([1, 2])),
+    Brand.findById(1).then(brand => brand.setPlaces([1, 2, 4])),
     Brand.findById(2).then(brand => brand.setPlaces(3)),
-    Brand.findById(5).then(brand => brand.setPlaces(4)),
-    Brand.findById(6).then(brand => brand.setPlaces(5)),
+    Brand.findById(5).then(brand => brand.setPlaces([5, 6])),
+    Brand.findById(6).then(brand => brand.setPlaces(7)),
   ])
 
   // const addDefaultCloset= await Promise.all([
@@ -96,7 +99,7 @@ async function seed () {
   console.log(`seeded ${users.length} users`)
   console.log(`seeded ${brands.length} brands`)
   console.log(`seeded ${categories.length} categories`)
-  console.log(`seeded ${links.length} links`)
+  // console.log(`seeded ${links.length} links`)
   console.log(`seeded ${places.length} locations`)
   console.log(`seeded successfully`)
 }
