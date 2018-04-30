@@ -23,19 +23,26 @@ class Categories extends Component {
                                     // to={`/add`} params={{ test: category.id }}
         return (
             <div className="container">
-             <h2 className="category-list">Choose A Category</h2>
-             <div className="categories">
-                 {
-                     categories.map((category, i) => {
-                        return (
-                            <Link to={{pathname: '/add', state: { categ: category.id}}} className='category' key={category.id}>
-                            <div className="cat-item" react_id={`id_${i}`}>{category.name}</div>
-                            </Link>
-                        )
-                      })
-                 }
-             </div>
-            
+                <h2 className="category-list">Choose A Category</h2>
+                    <div className="categories">
+                        {
+                            categories.map((category, i) => {
+                                return (
+                                    
+                                    <div className="cat-item" >{category.name}
+                                    <Link to={{pathname: '/add', state: { categ: category.id}}} className='category' key={category.id}>
+                                    <img className="img-thumbnail" react_id={`${i}`} src={`../images/${i}.png`} />
+                                    </Link>
+                                    </div>
+                                    // {category.name}
+                                    
+                                    // <Link to={{pathname: '/add', state: { categ: category.id}}} className='category' key={category.id}>
+                                    // <div className="cat-item" react_id={`${i}`}></div>
+                                    // </Link>
+                                )
+                            })
+                        }
+                     </div> 
             </div>
         )
     }

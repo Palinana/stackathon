@@ -18,9 +18,9 @@ class SingleCloset extends Component {
             userId: '',
             isClicked: false,
             links: [
-                "http://us.topshop.com/",
                 "https://www.zara.com/us/",
                 "https://shop.mango.com/us",
+                "http://us.topshop.com/",
                 "https://www.gap.com",
                 "https://www.levi.com/US/en_US/",
                 "https://www.victoriassecret.com"
@@ -70,33 +70,32 @@ class SingleCloset extends Component {
     componentDidMount(){
         this.props.getSingleCloset(this.props.match.params.id);
     }
-    handleClick(e){
+    handleClick(){
         e.preventDefault();
-        // window.location.assign("https://www.bbc.co.uk");onClick={this.handleClick}
+        window.location.assign("https://www.bbc.co.uk");
     }
 
     render() {
       const item = this.props.selectedCloset
       const item2 = item.id
-      console.log('brands LINK ', item.brand)
+      console.log('brands LINK ', item2)
 
-        // console.log('selectedCloset ', item.brand)
+        console.log('selectedCloset ', item)
    
-        let {name, link, id} = item.brand || {};
+        let {name, link} = item.brand || {};
        
         let {name : closetCategory} = item.category || {};
 
         const brands = this.props.brands
-        console.log('brands ', id)  
        
-        const linkKS = this.state.links[id-1]
+        const linkKS = this.state.links[item2-1]
     
-        console.log('state linkd ', linkKS)    
+        // console.log('state linkd ', linkKS)    
 
         return (
           <div className="main-single-page"> 
               <Navbar />
-              <a href={linkKS}><button className="btn-site-link" >Go to {name} website</button></a>
+              <a href={linkKS}><button className="btn-site-link" onClick={this.handleClick}>Go to {name} website</button></a>
             {
                 <div className="order-list"  key={item.id}>
                     <h3 className="single-item-info">Category: {closetCategory}</h3>
@@ -118,8 +117,8 @@ class SingleCloset extends Component {
                                 </div>
                         }
                     <h3 className="single-item-info">Brand: {name}</h3>
-                    <h3 className="single-item-info">Style: {item.style}</h3><button className="edit-btn" onClick={this.onClick.bind(this)}>Edit</button> 
-                        {this.state.isClicked && 
+                    <h3 className="single-item-info">Style: {item.style}</h3>
+                        {/* {this.state.isClicked && 
                                     <div className='form'>
                                     <form onSubmit={this.handleSubmit}>
                                         <div>
@@ -130,11 +129,11 @@ class SingleCloset extends Component {
                                             <input name="style" type="text" onChange={this.handleChange}  value={this.state.style}/>
                                         </div>
                                         <div>
-                                            <button className="change-style" type="submit">Change</button>
+                                            <button className="change-size" type="submit">Change</button>
                                         </div>
                                     </form>
                                     </div>
-                            }    
+                            }     */}
                 </div>
             }
             <div className="brand-map">{name} stores</div>

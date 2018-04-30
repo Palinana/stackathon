@@ -4,7 +4,7 @@ const db = require('../db')
 //this is our 'Order' for a user
 const Closet = db.define('closet', {
   size: {
-    type: Sequelize.INTEGER,
+    type: Sequelize.STRING,
   
   },
   style: {
