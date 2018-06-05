@@ -46,6 +46,7 @@ nav a:hover {
 /* login page */
 .login-main{
   background: linear-gradient(to left, #8e9eab, #eef2f3);
+  height: 800px;
 }
 
 .form-container{
@@ -127,8 +128,8 @@ nav a:hover {
 .categories{
   display: flex;
     width: 1100px;
-    margin-left: 90px;
-    margin-top: 100px;
+    margin-left: 135px;
+     margin-top: 100px;
     flex-wrap: wrap;
     flex-direction: row;
     flex-wrap: wrap;

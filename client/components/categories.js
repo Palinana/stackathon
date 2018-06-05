@@ -29,7 +29,7 @@ class Categories extends Component {
                             categories.map((category, i) => {
                                 return (
                                     
-                                    <div className="cat-item" >{category.name}
+                                    <div className="cat-item" >
                                     <Link to={{pathname: '/add', state: { categ: category.id}}} className='category' key={category.id}>
                                     <img className="img-thumbnail" react_id={`${i}`} src={`../images/${i}.png`} />
                                     </Link>
